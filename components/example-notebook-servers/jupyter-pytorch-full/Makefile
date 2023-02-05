@@ -11,10 +11,10 @@ docker-build-cpu: docker-build-jupyter-pytorch
 	docker build -t ${REGISTRY}/jupyter-pytorch-full:${TAG} --build-arg BASE_IMG=${REGISTRY}/jupyter-pytorch:${TAG} -f cpu.Dockerfile . 
 
 docker-build-cuda: docker-build-jupyter-pytorch-cuda
-	docker build -t ${REGISTRY}/jupyter-pytorch-cuda-full:${TAG} --build-arg BASE_IMG=${REGISTRY}/jupyter-pytorch-cuda:${TAG} -f cuda.Dockerfile . 
+	docker build -t ${REGISTRY}/jupyter-pytorch-cuda-lexnlp-full:${TAG} --build-arg BASE_IMG=${REGISTRY}/jupyter-pytorch-cuda:${TAG} -f cuda.Dockerfile . 
 
 docker-push-cpu:
 	docker push ${REGISTRY}/jupyter-pytorch-full:${TAG}
 
 docker-push-cuda:
-	docker push ${REGISTRY}/jupyter-pytorch-cuda-full:${TAG}
+	docker push ${REGISTRY}/jupyter-pytorch-cuda-lexnlp-full:${TAG}
